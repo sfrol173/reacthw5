@@ -1,0 +1,65 @@
+.product-card__description {
+  margin-bottom: 8px;
+  color: rgb(60, 66, 66);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.715px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 175px;
+}
+
+.product-card__category {
+  color: rgb(127, 127, 127);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.536px;
+}
+
+.product-card__price {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: rgb(60, 66, 66);
+  background-color: rgb(246, 246, 246);
+}
+
+.checkout-card__text{
+  color: #3C4242;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.28px;
+
+  .checkout-card__marker{
+    color: #807D7E;
+  }
+}
+
+.checkout-card__total-price{
+  color: #807D7E;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.28px;
+  text-align: center;
+  width: 140px;
+}
+
+.checkout-cart__total {
+  color: #3C4242;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.36px;
+}

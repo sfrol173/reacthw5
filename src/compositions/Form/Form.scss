@@ -1,0 +1,33 @@
+.form {
+  width: 820px;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 10px;
+  padding-top: 60px;
+  box-sizing: border-box;
+
+  .empty-div{
+    width: 300px;
+  }
+
+
+  .submit-cart{
+    margin-top: 50px;
+    border-radius: 8px;
+    background: #8A33FD;
+    display: flex;
+    padding: 16px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
