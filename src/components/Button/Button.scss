@@ -123,3 +123,37 @@
   text-decoration: none;
   color: black;
 }
+
+.list-button__block {
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+  background-color: white;
+  background-image: url("./icons/blockBlack.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.block-active{
+  background-color: black;
+  background-image: url("./icons/blockWhite.svg");
+}
+
+.list-button__list {
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+  background-color: white;
+  background-image: url("./icons/listBlack.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.list-active {
+  background-color: black;
+  background-image: url("./icons/listWhite.svg");
+}

@@ -1,8 +1,9 @@
+
 import {configureStore} from "@reduxjs/toolkit";
 import menReducer from './slices/men.slice.js';
 import appReducer from './slices/app.slice.js'
 import {thunk} from "redux-thunk";
-import {logger} from "redux-logger/src";
+import logger from "redux-logger/src";
 
 export default configureStore({
     reducer: {

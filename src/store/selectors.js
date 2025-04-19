@@ -10,4 +10,8 @@ export const selectorTotalPrice = (state) => state.app.totalPrice;
 
 export const selectorUserInfo = (state) => state.app.userInfo;
 
+export const selectorFavoriteNum = (state) => state.app.favoriteNum;
+
+export const selectorCartNum = (state) => state.app.cartNum;
+
 

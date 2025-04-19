@@ -4,7 +4,9 @@ const initialState = {
     favoriteList: [],
     cartList: [],
     totalPrice: 0,
-    userInfo:{}
+    userInfo: {},
+    favoriteNum: 0,
+    cartNum: 0,
 }
 
 
@@ -16,12 +18,12 @@ const appSlice = createSlice({
 
             if (!state.favoriteList.some((item) => item.article === payload.article)) {
                 state.favoriteList = [...state.favoriteList, payload]
-                document.querySelector('.favorite-num').innerText = state.favoriteList.length
+                state.favoriteNum = state.favoriteList.length
                 sessionStorage.setItem('favoriteList', JSON.stringify(state.favoriteList))
 
             } else {
                 state.favoriteList = state.favoriteList.filter((item) => item.article !== payload.article)
-                document.querySelector('.favorite-num').innerText = state.favoriteList.length
+                state.favoriteNum = state.favoriteList.length
                 sessionStorage.setItem('favoriteList', JSON.stringify(state.favoriteList))
 
             }
@@ -32,13 +34,13 @@ const appSlice = createSlice({
                     !state.favoriteList.some((card) => card.article === payload.article)){
 
                     state.favoriteList = [...state.favoriteList, payload]
-                    document.querySelector('.favorite-num').innerText = state.favoriteList.length
+                    state.favoriteNum = state.favoriteList.length
                 }
         },
         actionCartList: (state, {payload}) => {
 
-            let count = 0;
-            let price = 0;
+            state.cartNum = 0;
+            state.totalPrice = 0;
 
             if (!state.cartList.some((item) => item.article === payload.article)) {
                 state.cartList = [...state.cartList, payload]
@@ -53,12 +55,11 @@ const appSlice = createSlice({
             }
 
             state.cartList.forEach((item) =>{
-                count += +item.amount;
-                price += +item.amount * +item.price
+                state.cartNum += +item.amount
+                state.totalPrice += +item.amount * +item.price
+
             })
 
-            state.totalPrice = price
-            document.querySelector('.cart-num').innerText = count
             sessionStorage.setItem('cartList', JSON.stringify(state.cartList))
         },
 
@@ -68,20 +69,18 @@ const appSlice = createSlice({
 
                 state.cartList = [...state.cartList, payload]
             }
-            let count = 0;
-            let price = 0;
+            state.cartNum = 0;
+            state.totalPrice = 0;
             state.cartList.forEach((item) =>{
-                count += +item.amount;
-                price += +item.amount * +item.price
+                state.cartNum += +item.amount;
+                state.totalPrice += +item.amount * +item.price
             })
-            state.totalPrice = price
-            document.querySelector('.cart-num').innerText = count
         },
 
         actionDeleteInCart: (state, {payload})  => {
 
-            let countCart = 0;
-            let price = 0;
+            state.cartNum = 0;
+            state.totalPrice = 0;
             state.cartList.forEach((item) => {
                 if (item.article === payload.article){
                     item.amount = +item.amount - +payload.amount;
@@ -92,11 +91,10 @@ const appSlice = createSlice({
             })
 
             state.cartList.forEach((item) => {
-                countCart += +item.amount;
-                price += +item.amount * +item.price;
+                state.cartNum += +item.amount;
+                state.totalPrice += +item.amount * +item.price;
             });
-            state.totalPrice = price;
-            document.querySelector('.cart-num').innerText = countCart;
+
             sessionStorage.setItem('cartList', JSON.stringify(state.cartList));
         },
 
@@ -113,17 +111,17 @@ const appSlice = createSlice({
             });
 
             state.totalPrice = price;
-            document.querySelector('.cart-num').innerText = countCart;
+            state.cartNum = countCart
             sessionStorage.setItem('cartList', JSON.stringify(state.cartList));
         },
         actionUserInfo: (state, {payload}) => {
             state.userInfo = payload
-            console.log(state.userInfo)
         },
         actionDeleteAfterBuying: (state) => {
             state.cartList = [];
             sessionStorage.removeItem('cartList')
-            document.querySelector('.cart-num').innerText = 0;
+            state.cartNum = 0
+            state.totalPrice =0
         }
     }
 })

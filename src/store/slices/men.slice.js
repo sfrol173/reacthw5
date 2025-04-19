@@ -29,6 +29,8 @@ const menStoreSlice = createSlice({
     reducers: {
         menCards: (state, action) => {
             state.goods = [...action.payload]
+            console.log('action', action)
+            console.log(action.payload)
         }
     },
     // extraReducers: (builder) => {
@@ -38,6 +40,6 @@ const menStoreSlice = createSlice({
     // }
 })
 
-export const {menCards} = menStoreSlice.actions
+export const {menCards, } = menStoreSlice.actions
 
 export default menStoreSlice.reducer

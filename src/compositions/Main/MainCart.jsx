@@ -186,7 +186,9 @@ const MainCart = () => {
                             category={card.category}
                             name={card.name}
                             article={card.article}
-                            isCartPage={isCartPage} isCart={true}
+                            isFavoritePage={true}
+                            isCartPage={isCartPage}
+                            isCart={true}
                             amount={card.amount}
                             onClickFavorite={() => handleClickFavorite(card)}
                             onClickCart={() => handleClickCart(card)}

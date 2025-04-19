@@ -64,6 +64,7 @@ const MainFavorites = () => {
     const [isDelete, setIsDelete] = useState(false);
     const [amount, setAmount] = useState(0);
     const [amountDelete, setAmountDelete] = useState(0);
+    const [isBlock, setIsBlock] = useState(true)
 
     const handleCloseModal = () => {
         setIsModal(false);
@@ -179,6 +180,7 @@ const MainFavorites = () => {
                     {favoriteList.map((card) => (
                         <ProductCard
                             key={card.article}
+                            isFavoritePage={true}
                             imageUrl={card.photoUrl}
                             price={card.price}
                             category={card.category}

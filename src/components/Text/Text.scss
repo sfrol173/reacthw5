@@ -63,3 +63,14 @@
   line-height: normal;
   letter-spacing: 0.36px;
 }
+
+.inList__description {
+  white-space: nowrap;
+  overflow: unset;
+  text-overflow: unset;
+  max-width: fit-content;
+}
+
+.inList__prise{
+  width: fit-content;
+}

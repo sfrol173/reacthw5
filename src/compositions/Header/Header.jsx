@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import {useSelector, useDispatch} from "react-redux";
 
 
 import Logo from "../../Components/Logo/Logo.jsx";
@@ -10,13 +11,16 @@ import Input from "../../Components/Input/Input.jsx";
 
 
 import './Header.scss'
+import {selectorCartNum, selectorFavoriteNum} from "../../store/selectors.js";
 
 
 
 
 const Header = ({onFavoriteClick, onCartClick, inCart, inFavorite}) => {
 
-
+    const favoriteNum = useSelector(selectorFavoriteNum)
+    const cartNum = useSelector(selectorCartNum)
+    const dispatch = useDispatch()
     return (
         <>
             <HeaderBox>
@@ -41,10 +45,10 @@ const Header = ({onFavoriteClick, onCartClick, inCart, inFavorite}) => {
                 <Input name={'search'} id={'search'} placeholder={'Search'}/>
                 <div className={'header-buttons'}>
                     <Link to={'/favorites'} className='header-button favorite' >
-                        <span className={'favorite-num'}>0</span>
+                        <span className={'favorite-num'}>{favoriteNum}</span>
                     </Link>
                     <Link to={'/cart'}  className='header-button cart' >
-                        <span className={'cart-num'}>0</span>
+                        <span className={'cart-num'}>{cartNum}</span>
 
                     </Link>
                 </div>

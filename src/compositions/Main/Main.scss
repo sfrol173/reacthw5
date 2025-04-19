@@ -47,7 +47,7 @@ main {
 
     .checkout-cart__title {
       color: #3C4242;
-      font-family: 'Roboto',  sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-size: 24px;
       font-weight: 400;
       line-height: normal;
@@ -57,7 +57,7 @@ main {
       display: flex;
       align-items: center;
 
-      .product-card__section{
+      .product-card__section {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -68,8 +68,15 @@ main {
   }
 }
 
-.checkout-cart__footer{
+.checkout-cart__footer {
   margin-top: 36px;
   display: flex;
   justify-content: space-between;
+}
+
+.list-button {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 40px;
+  margin-right: 40px;
 }

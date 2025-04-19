@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {fetchMenGoods} from "../../store/slices/men.slice.js";
 import {actionFavoriteList,
@@ -7,7 +7,6 @@ import {actionFavoriteList,
     actionDeleteInCart,
     actionDeleteAllInCart} from "../../store/slices/app.slice.js";
 import {selectorMenCards, selectorFavoriteList, selectorCartList} from "../../store/selectors.js";
-
 
 
 import ProductCard from "../ProductCard/ProductCard.jsx";
@@ -20,7 +19,7 @@ const RenderProductsList = () => {
 
     const menCards = useSelector(selectorMenCards);
     const favoriteList = useSelector(selectorFavoriteList);
-    const cartList = useSelector(selectorCartList)
+    const cartList = useSelector(selectorCartList);
 
     const dispatch = useDispatch();
 
